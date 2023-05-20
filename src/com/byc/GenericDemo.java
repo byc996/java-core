@@ -1,4 +1,4 @@
-package com.byc.pattern;
+package com.byc;
 
 import java.util.ArrayList;
 import java.util.Arrays;
