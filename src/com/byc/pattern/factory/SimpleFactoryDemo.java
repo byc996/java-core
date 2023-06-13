@@ -1,6 +1,8 @@
-package com.byc.pattern;
+package com.byc.pattern.factory;
 
-import java.text.DateFormat;
+/**
+ * 简单工厂模式
+ */
 
 class Car {
     void printName(){
@@ -35,7 +37,7 @@ class CarFactory {
     }
 }
 
-public class FactoryDemo {
+public class SimpleFactoryDemo {
 
     public static void main(String[] args) {
         CarFactory carFactory = new CarFactory();

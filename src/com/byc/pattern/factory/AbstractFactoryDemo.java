@@ -1,4 +1,4 @@
-package com.byc.pattern;
+package com.byc.pattern.factory;
 
 class Laptop {
     void printName(){

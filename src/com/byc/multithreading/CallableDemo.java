@@ -6,8 +6,12 @@ import java.util.concurrent.FutureTask;
 
 public class CallableDemo {
     public static void main(String[] args) {
-        CallableThread callableThread = new CallableThread();
-        FutureTask<String> futureTask = new FutureTask(callableThread);
+//        CallableThread callableThread = new CallableThread();
+//        FutureTask<String> futureTask = new FutureTask(callableThread);
+        FutureTask<String> futureTask = new FutureTask(()->{
+            Thread.sleep(2000);
+            return "return value";
+        });
         new Thread(futureTask).start();
         try {
             String result = futureTask.get();
