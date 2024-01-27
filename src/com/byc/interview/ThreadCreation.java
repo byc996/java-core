@@ -83,7 +83,7 @@ public class ThreadCreation {
                 }
             }
         });
-        // 4.1 线程池 ThreadPoolExecutor
+        // 4.2 线程池 ThreadPoolExecutor
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(2, 5,
                 10, TimeUnit.SECONDS, new LinkedBlockingQueue<>());
         threadPoolExecutor.execute(new Runnable() {
