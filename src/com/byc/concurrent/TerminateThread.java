@@ -1,4 +1,4 @@
-package com.byc.interview;
+package com.byc.concurrent;
 
 public class TerminateThread {
 
