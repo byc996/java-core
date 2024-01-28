@@ -1,7 +1,10 @@
 package com.byc.interview;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicStampedReference;
+import java.util.concurrent.atomic.LongAdder;
 
 
 public class CASAtomic {
@@ -52,6 +55,29 @@ public class CASAtomic {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+        LongAdder counter = new LongAdder();
+        // 创建一个固定大小的线程池
+        ExecutorService executor = Executors.newFixedThreadPool(3);
+
+        // 向线程池提交任务
+        for (int i = 0; i < 1000; i++) {
+            executor.submit(() -> {
+                // 对 LongAdder 进行累加操作
+                counter.increment();
+            });
+        }
+
+        // 关闭线程池
+        executor.shutdown();
+
+        // 等待所有任务执行完成
+        while (!executor.isTerminated()) {
+            // do nothing
+        }
+
+        // 输出累加结果
+        System.out.println("Final result: " + counter.sum());
     }
 
     static class CounterIncrementer implements Runnable {
