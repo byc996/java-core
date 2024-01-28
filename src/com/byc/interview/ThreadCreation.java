@@ -81,18 +81,23 @@ public class ThreadCreation {
                 for (int i = 0; i < 100; i++) {
                     System.out.print("Executors: " + i);
                 }
+                System.out.println();
             }
         });
+        // 别忘记关闭线程池
+        executorService.shutdown();
         // 4.2 线程池 ThreadPoolExecutor
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(2, 5,
-                10, TimeUnit.SECONDS, new LinkedBlockingQueue<>());
+                10, TimeUnit.SECONDS, new LinkedBlockingQueue<>(10));
         threadPoolExecutor.execute(new Runnable() {
             @Override
             public void run() {
                 for (int i = 0; i < 100; i++) {
                     System.out.print("ThreadPoolExecutor: " + i);
                 }
+                System.out.println();
             }
         });
+        threadPoolExecutor.shutdown();
     }
 }
