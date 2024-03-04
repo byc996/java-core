@@ -10,9 +10,9 @@ public class SortingMain {
 //        InsertionSort.insertionSort(arr);
 //        SelectionSort.selectionSort(arr);
 //        QuickSort.quickSort(arr, 0, arr.length - 1);
-        ShellSort.shellSort(arr);
+//        ShellSort.shellSort(arr);
+//        System.out.println(Arrays.toString(arr));
+        MergeSort.mergeSort(arr, 0, arr.length-1);
         System.out.println(Arrays.toString(arr));
-        int[] sortedArr = MergeSort.mergeSort(arr);
-        System.out.println(Arrays.toString(sortedArr));
     }
 }
