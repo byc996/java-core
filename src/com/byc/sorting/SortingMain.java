@@ -16,7 +16,9 @@ public class SortingMain {
 //        System.out.println(Arrays.toString(arr));
 //        HeapSort.heapSort(arr);
 //        System.out.println(Arrays.toString(arr));
-        CountingSort.countingSort(arr);
+//        CountingSort.countingSort(arr);
+//        System.out.println(Arrays.toString(arr));
+        BubbleSort.bubbleSort(arr);
         System.out.println(Arrays.toString(arr));
     }
 }
