@@ -12,7 +12,9 @@ public class SortingMain {
 //        QuickSort.quickSort(arr, 0, arr.length - 1);
 //        ShellSort.shellSort(arr);
 //        System.out.println(Arrays.toString(arr));
-        MergeSort.mergeSort(arr, 0, arr.length-1);
+//        MergeSort.mergeSort(arr, 0, arr.length-1);
+//        System.out.println(Arrays.toString(arr));
+        HeapSort.heapSort(arr);
         System.out.println(Arrays.toString(arr));
     }
 }
